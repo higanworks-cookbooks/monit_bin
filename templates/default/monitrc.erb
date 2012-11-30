@@ -1,0 +1,19 @@
+set daemon <%= node['monit']['monitrc']['daemon'] %>
+    with start delay 30
+<% if node['monit']['monitrc']['init'] = true %>
+set init
+<% end %>
+set logfile <%= node['monit']['monitrc']['logfile'] %>
+set eventqueue <%= node['monit']['monitrc']['eventqueue'] %>
+set httpd port <%= node['monit']['monitrc']['http_port'] %>
+    use address <%= node['monit']['monitrc']['http_address'] %>
+    <% node['monit']['monitrc']['allows'].each do |allow| %>
+    allow <%= allow %>
+    <% end %>
+set mailserver <%= node['monit']['monitrc']['mailserver'] %>
+
+<% node['monit']['monitrc']['alerts'].each do |alert| %>
+set alert <%= alert %>
+<% end %>
+
+include /etc/monit/conf.enable/*

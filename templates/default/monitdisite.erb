@@ -1,0 +1,26 @@
+#!/bin/sh -e
+## Refernce: Opscode-cookbook::nginx 
+
+SYSCONFDIR='<%= node['monit']['dir'] %>'
+
+if [ -z $1 ]; then
+        echo "Which setting would you like to disable?"
+        echo -n "Your choices are: "
+        ls $SYSCONFDIR/conf.enable/* | \
+        sed -e "s,$SYSCONFDIR/conf.enable/,,g" | xargs echo
+        echo -n "Setting name?"
+        read SITENAME
+else
+        SITENAME=$1
+fi
+
+if ! [ -e $SYSCONFDIR/conf.enable/$SITENAME -o \
+       -e $SYSCONFDIR/conf.enable/"$PRIORITY"-"$SITENAME" ]; then
+        echo "This setting is already disabled, or does not exist!"
+        exit 1
+fi
+
+if ! rm $SYSCONFDIR/conf.enable/$SITENAME 2>/dev/null; then
+        rm -f $SYSCONFDIR/conf.enable/"$PRIORITY"-"$SITENAME"
+fi
+echo "Setting $SITENAME disabled; reload monit to disable."

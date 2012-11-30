@@ -1,0 +1,35 @@
+#!/bin/sh -e
+## Refernce: Opscode-cookbook::nginx 
+
+SYSCONFDIR='<%= node['monit']['dir'] %>'
+
+if [ -z $1 ]; then
+        echo "Which setting would you like to enable?"
+        echo -n "Your choices are: "
+        ls $SYSCONFDIR/conf.avail/* | \
+        sed -e "s,$SYSCONFDIR/conf.avail/,,g" | xargs echo
+        echo -n "Setting name?"
+        read SITENAME
+else
+        SITENAME=$1
+fi
+
+if [ -e $SYSCONFDIR/conf.enable/$SITENAME -o \
+     -e $SYSCONFDIR/conf.enable/"$PRIORITY"-"$SITENAME" ]; then
+        echo "This Setting is already enabled!"
+        exit 0
+fi
+
+if ! [ -e $SYSCONFDIR/conf.avail/$SITENAME ]; then
+        echo "This Setting does not exist!"
+        exit 1
+fi
+
+if [ $SITENAME = "default" ]; then
+        ln -sf $SYSCONFDIR/conf.avail/$SITENAME \
+               $SYSCONFDIR/conf.enable/"$PRIORITY"-"$SITENAME"
+else
+        ln -sf $SYSCONFDIR/conf.avail/$SITENAME $SYSCONFDIR/conf.enable/$SITENAME
+fi
+
+echo "Setting $SITENAME installed; reload monit to enable."
