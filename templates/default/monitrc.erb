@@ -1,18 +1,23 @@
-set daemon <%= node['monit']['monitrc']['daemon'] %>
+## creted by chef for node['hostname']
+
+set daemon <%= @daemon %>
     with start delay 30
-<% if node['monit']['monitrc']['init'] = true %>
+<% if @init == true %>
 set init
 <% end %>
-set logfile <%= node['monit']['monitrc']['logfile'] %>
-set eventqueue <%= node['monit']['monitrc']['eventqueue'] %>
-set httpd port <%= node['monit']['monitrc']['http_port'] %>
-    use address <%= node['monit']['monitrc']['http_address'] %>
-    <% node['monit']['monitrc']['allows'].each do |allow| %>
+set logfile <%= @logfile %>
+set eventqueue <%= @eventqueue %>
+<% if @mmonit %>
+set mmonit <%= @mmonit %>
+<% end %>
+set httpd port <%= @http_port %>
+    use address <%= @http_address %>
+    <% @allows.each do |allow| %>
     allow <%= allow %>
     <% end %>
-set mailserver <%= node['monit']['monitrc']['mailserver'] %>
+set mailserver <%= @mailserver %>
 
-<% node['monit']['monitrc']['alerts'].each do |alert| %>
+<% @alerts.each do |alert| %>
 set alert <%= alert %>
 <% end %>
 
