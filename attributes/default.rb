@@ -26,3 +26,4 @@ default['monit']['monitrc']['mailserver']   = ["localhost"]
 default['monit']['monitrc']['alerts']   = []
 
 
+default['monit']['monitrc']['mmonit']   = nil # set mmonit http://user:pass@example.com:8080/collector
