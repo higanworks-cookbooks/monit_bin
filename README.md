@@ -1,4 +1,5 @@
 # monit_bin cookbook
+[![Build Status](https://secure.travis-ci.org/higanworks-cookbooks/monit_bin.png?branch=master)](https://travis-ci.org/higanworks-cookbooks/monit_bin)
 
 * Install monit from source.
 * Include setting tools monitensite, monitdisite.

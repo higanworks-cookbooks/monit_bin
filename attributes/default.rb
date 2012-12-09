@@ -22,7 +22,7 @@ default['monit']['monitrc']['http_address']   = "0.0.0.0"
 default['monit']['monitrc']['allows']   = ["localhost"]
 
 
-default['monit']['monitrc']['mailserver']   = ["localhost"]
+default['monit']['monitrc']['mailserver']   = "localhost"
 default['monit']['monitrc']['alerts']   = []
 
 
