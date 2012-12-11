@@ -1,0 +1,4 @@
+check system <%= @service_name %>
+<% @policies.each do |policy| %>
+  <%= policy.to_s %>
+<%end%>
