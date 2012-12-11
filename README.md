@@ -52,9 +52,56 @@ Put your confing to `/etc/monit/conf.avail/` and...
 
 TODO: Write attributes...
 
+# Resources and Providers
+
+### monit_bin
+
+Call monitensite and monit disite.
+
+**Example**
+<pre><code>monit_bin "postfix" do
+  action :enable
+end</code></pre>
+
+### monti_bin_check_system
+
+build config for system resource with poricy strings.
+
+**Example**
+<pre><code>monit_bin_check_system "localperf" do
+  action :create
+  policies ["if memory usage > 70 % then alert"]
+end</code></pre>
+
+
+### monti_bin_check_filesystem
+
+build config for filesystem resource with poricy strings.
+
+**Example**
+<pre><code>monit_bin_check_filesystem "rootfs" do
+  action :create
+  path "/"
+  policies ["if space usage > 70 % then alert"]
+end</code></pre>
+
+### monti_bin_check_process
+
+build config for process resource with poricy strings.
+
+**Example**
+<pre><code>monit_bin_check_process "sshd" do
+  action :create
+  type "pid"
+  pidfile "/var/run/sshd.pid "
+end</code></pre>
+
+
 # Recipes
 
-* default
+* default: install monit from souce.
+* include: just define monit as service resource.
+* services: monitoring services. setting from attributes.
 
 # Author
 
