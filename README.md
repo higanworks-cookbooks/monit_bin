@@ -94,6 +94,8 @@ build config for process resource with poricy strings.
   action :create
   type "pid"
   pidfile "/var/run/sshd.pid "
+  start_program "/usr/sbin/service ssh start"
+  stop_program "/usr/sbin/service ssh stop"
 end</code></pre>
 
 
