@@ -17,3 +17,18 @@ node['monit']['filesystem']['targets'].each do |k, v|
 
   monit_bin "filesystem_#{k}"
 end
+
+
+## check processes setting
+node['monit']['process']['targets'].each do |k, v|
+  monit_bin_check_process k do
+    type v['type']
+    pidfile v['pidfile']
+    regex v['regex']
+    start_program v['start_program']
+    stop_program v['stop_program']
+    policies v['policies']
+  end
+
+  monit_bin k
+end
