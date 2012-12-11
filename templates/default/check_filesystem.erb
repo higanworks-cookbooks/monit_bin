@@ -1,0 +1,4 @@
+check filesystem <%= @service_name %> with path <%= @path %>
+<% @policies.each do |policy| %>
+  <%= policy.to_s %>
+<%end%>
