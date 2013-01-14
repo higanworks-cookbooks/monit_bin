@@ -69,7 +69,6 @@ script "install_from_source" do
     tar xvzf #{node["monit"]['binaries']}.tar.gz
     cp -f monit-#{node['monit']['version']}/bin/monit /opt/local/sbin/
     cp -f monit-#{node['monit']['version']}/man/man1/monit.1 /opt/local/man/man1
-    mandb
   EOH
 
   only_if "test ! -f #{Chef::Config[:file_cache_path]}/monit/#{node['monit']['binaries']}.tar.gz"
