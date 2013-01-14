@@ -9,6 +9,11 @@
 
 * make (build-essential)
 
+# Platform
+
+- ubuntu
+- SmartOS
+
 # Usage
 
 `recipe[monit]` to default install.
@@ -104,6 +109,11 @@ end</code></pre>
 * default: install monit from souce.
 * include: just define monit as service resource.
 * services: monitoring services. setting from attributes.
+* smartos_inittab: install and regist inittab for smartos. Smartos use this insted of default.
+
+# Test
+
+`kitchen test`
 
 # Author
 
