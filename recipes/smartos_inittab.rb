@@ -80,14 +80,8 @@ end
 
 # monit setting controler
 
-directory "/usr/local/sbin" do
-  mode 00755
-  owner "root"
-  group "root"
-end
-
 %w(monitensite monitdisite).each do |command|
-  template "/usr/local/sbin/#{command}" do
+  template "/opt/local/sbin/#{command}" do
     source "#{command}.erb"
     mode 0744
     owner "root"
