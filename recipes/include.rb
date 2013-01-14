@@ -27,5 +27,10 @@ service "monit" do
   case node["platform"]
   when "ubuntu"
     provider Chef::Provider::Service::Upstart
+  case "smartos"
+    supports [:reload, :restart]
+    pattern "/opt/local/sbin/monit"
+    restart_command "init q"
+    reload_command "/opt/local/sbin/monit reload"
   end
 end

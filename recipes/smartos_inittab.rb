@@ -56,6 +56,18 @@ template "/etc/monitrc" do
   notifies :restart, "service[monit]"
 end
 
+script "add inittab" do
+  interpreter "bash"
+  flags "-e"
+  code <<-EOH
+  cat <<EOL >>/etc/inittab
+### added_by_chef_recipe_monit_bin
+mo::respawn:/opt/local/sbin/monit -I -c /etc/monitrc
+EOL
+  EOH
+  not_if "grep added_by_chef_recipe_monit_bin /etc/inittab -q"
+end
+  
 
 script "install_from_source" do
   interpreter "bash"
