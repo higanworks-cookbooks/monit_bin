@@ -66,6 +66,7 @@ mo::respawn:/opt/local/sbin/monit -I -c /etc/monitrc
 EOL
   EOH
   not_if "grep added_by_chef_recipe_monit_bin /etc/inittab -q"
+  notifies :start, "service[monit]"
 end
   
 
