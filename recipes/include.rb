@@ -28,7 +28,6 @@ service "monit" do
   when "ubuntu"
     provider Chef::Provider::Service::Upstart
   case "smartos"
-    supports :reload => true, :restart => true
     pattern "/opt/local/sbin/monit"
     restart_command "init q"
     reload_command "/opt/local/sbin/monit reload"
