@@ -1,0 +1,4 @@
+cookbook "monit_bin" do
+  configuration "default"
+  configuration "services"
+end

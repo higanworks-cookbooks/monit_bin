@@ -9,6 +9,7 @@ end
 
 default['monit']['binaries'] = "monit-#{node['monit']['version']}-#{node['os']}-#{node['monit']['arc']}"
 
+
 default['monit']['dir'] = '/etc/monit'
 
 default['monit']['monitrc']['daemon'] = 60
@@ -27,4 +28,9 @@ default['monit']['monitrc']['alerts']   = []
 
 
 default['monit']['monitrc']['mmonit']   = nil # set mmonit http://user:pass@example.com:8080/collector
+
+if node['platform'] == "smartos" then
+  default['monit']['binaries'] = "monit-#{node['monit']['version']}-solaris-x64"
+  default['monit']['dir'] = '/opt/local/etc/monit'
+end
 

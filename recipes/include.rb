@@ -24,5 +24,15 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 service "monit" do
-  provider Chef::Provider::Service::Upstart
+  case node["platform"]
+  when "ubuntu"
+    provider Chef::Provider::Service::Upstart
+  when "smartos"
+    provider Chef::Provider::Service::Simple
+    pattern "/opt/local/sbin/monit"
+    restart_command "/usr/sbin/init q"
+    reload_command "/opt/local/sbin/monit reload"
+    start_command "/usr/sbin/init q"
+    status_command "/usr/bin/pgrep /opt/local/sbin/monit"
+  end
 end
