@@ -24,5 +24,8 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 service "monit" do
-  provider Chef::Provider::Service::Upstart
+  case node["platform"]
+  when "ubuntu"
+    provider Chef::Provider::Service::Upstart
+  end
 end
