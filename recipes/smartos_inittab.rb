@@ -50,7 +50,7 @@ end
   end
 end
 
-template "/opt/local/etc/monitrc" do
+template "/etc/monitrc" do
   source "monitrc.erb"
   variables node['monit']['monitrc']
   notifies :restart, "service[monit]"
