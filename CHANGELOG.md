@@ -2,6 +2,10 @@
 
 ## v0.3.0
 
+- [Bugfix] monitrc include_dir does not use attribute.
+
+## v0.3.0
+
 - Support Smartos
 - add test-kitchin for ubuntu
 

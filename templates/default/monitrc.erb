@@ -21,4 +21,4 @@ set mailserver <%= @mailserver %>
 set alert <%= alert %>
 <% end %>
 
-include /etc/monit/conf.enable/*
+include <%= node['monit']['dir'] %>/conf.enable/*
