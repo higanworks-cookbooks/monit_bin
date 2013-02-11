@@ -20,3 +20,27 @@ default['monit']['process']['targets'] = {
 
 }
 
+if node['platform'] == "smartos" then
+  default['monit']['process']['targets'] = {
+    "cron" => {
+      "type" => "regex",
+      "regex" => "/usr/sbin/cron",
+      "start_program" => "/usr/sbin/svcadm enable -s cron",
+      "stop_program"  => "/usr/sbin/svcadm disable -s cron",
+      "policies" => [
+        "if 2 restarts within 3 cycles then alert"
+      ]
+    },
+    "sshd" => {
+      "type" => "pid",
+      "pidfile" => "/var/run/sshd.pid",
+      "start_program" => "/usr/sbin/svcadm enable -s ssh",
+      "stop_program"  => "/usr/sbin/svcadm disable -s ssh",
+      "policies" => [
+        "if 2 restarts within 3 cycles then alert"
+      ]
+    },
+  
+  }
+end
+
