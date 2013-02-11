@@ -1,6 +1,12 @@
 # Changelog
 
-## v0.3.0
+## v0.3.2
+
+- [Bugfix] binpath to use attribute.
+- [Bugfix] process type matching does not work due typo.
+- [Tune] Default monitorinig process for smartos. 
+
+## v0.3.1
 
 - [Bugfix] monitrc include_dir does not use attribute.
 
