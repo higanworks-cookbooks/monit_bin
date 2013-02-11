@@ -23,7 +23,7 @@ default['monit']['process']['targets'] = {
 if node['platform'] == "smartos" then
   default['monit']['process']['targets'] = {
     "cron" => {
-      "type" => "regex",
+      "type" => "maching",
       "regex" => "/usr/sbin/cron",
       "start_program" => "/usr/sbin/svcadm enable -s cron",
       "stop_program"  => "/usr/sbin/svcadm disable -s cron",
