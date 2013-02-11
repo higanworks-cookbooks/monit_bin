@@ -78,7 +78,7 @@ directory "/usr/local/sbin" do
 end
 
 %w(monitensite monitdisite).each do |command|
-  template "/usr/local/sbin/#{command}" do
+  template "#{node['monit']['bin_base']}/sbin/#{command}" do
     source "#{command}.erb"
     mode 0744
     owner "root"

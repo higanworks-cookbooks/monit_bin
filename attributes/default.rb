@@ -11,6 +11,7 @@ default['monit']['binaries'] = "monit-#{node['monit']['version']}-#{node['os']}-
 
 
 default['monit']['dir'] = '/etc/monit'
+default['monit']['bin_base'] = '/usr/local'
 
 default['monit']['monitrc']['daemon'] = 60
 default['monit']['monitrc']['init']   = true
@@ -32,5 +33,6 @@ default['monit']['monitrc']['mmonit']   = nil # set mmonit http://user:pass@exam
 if node['platform'] == "smartos" then
   default['monit']['binaries'] = "monit-#{node['monit']['version']}-solaris-x64"
   default['monit']['dir'] = '/opt/local/etc/monit'
+  default['monit']['bin_base'] = '/opt/local'
 end
 

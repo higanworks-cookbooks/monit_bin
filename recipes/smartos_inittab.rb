@@ -93,7 +93,7 @@ end
 # monit setting controler
 
 %w(monitensite monitdisite).each do |command|
-  template "/opt/local/sbin/#{command}" do
+  template "#{node['monit']['bin_base']}/sbin/#{command}" do
     source "#{command}.erb"
     mode 0744
     owner "root"
