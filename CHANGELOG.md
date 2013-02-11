@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.3
+
+- [Tune] Swap usage alert smartos.
+
 ## v0.3.2
 
 - [Bugfix] binpath to use attribute.
