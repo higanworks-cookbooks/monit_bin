@@ -20,7 +20,7 @@ default['monit']['monitrc']['eventqueue']   = "basedir /var/monit/ slots 1000"
 
 
 default['monit']['monitrc']['http_port']   = "2812"
-default['monit']['monitrc']['http_address']   = "0.0.0.0"
+default['monit']['monitrc']['http_address']   = node['ipaddress']
 default['monit']['monitrc']['allows']   = ["localhost"]
 
 
