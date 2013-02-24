@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.4
+
+- [Tune] Change default attribute http_address 0.0.0.0 to node[:ipaddress] HT: @iuliancostan
+
 ## v0.3.3
 
 - [Tune] Swap usage alert smartos.
