@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.5
+
+- [Tune] Change default attribute system_check system_localperf to system_node[:fqdn]
+
 ## v0.3.4
 
 - [Tune] Change default attribute http_address 0.0.0.0 to node[:ipaddress] HT: @iuliancostan
