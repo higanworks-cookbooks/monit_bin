@@ -8,7 +8,9 @@ action :create do
        :pidfile => new_resource.pidfile,
        :regex => new_resource.regex,
        :start_program => new_resource.start_program,
+       :start_timeout => new_resource.start_timeout,
        :stop_program => new_resource.stop_program,
+       :stop_timeout => new_resource.stop_timeout,
        :policies => new_resource.policies
      })
     new_resource.updated_by_last_action(true)

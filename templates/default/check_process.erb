@@ -9,7 +9,13 @@ check process <%= @service_name %> matching "<%= @regex %>"
 check process <%= @service_name %>
 <% end %>
   start program = "<%= @start_program %>"
+  <% if @start_timeout %>
+  with timeout <% @start_timeout.to_s %> seconds
+  <% end %>
   stop program  = "<%= @stop_program %>"
+  <% if @stop_timeout %>
+  with timeout <% @stop_timeout.to_s %> seconds
+  <% end %>
 <% @policies.each do |policy| %>
   <%= policy.to_s %>
 <% end %>

@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.6
+
+- [Tune] add timeout to Process monitor for start/stop
+
 ## v0.3.5
 
 - [Tune] Change default attribute system_check system_localperf to system_node[:fqdn]
