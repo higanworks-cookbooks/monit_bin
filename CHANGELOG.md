@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.6r7
+
+- [Bugfix] template <%= %>
+
 ## v0.3.6
 
 - [Tune] add timeout to Process monitor for start/stop
