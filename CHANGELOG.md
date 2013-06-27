@@ -1,6 +1,10 @@
 # Changelog
 
-## v0.3.6r7
+## v0.3.8
+
+- [Bugfix] tell reload when monitrc update on smartos.
+
+## v0.3.7
 
 - [Bugfix] template <%= %>
 

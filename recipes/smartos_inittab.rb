@@ -53,7 +53,7 @@ end
 template "/etc/monitrc" do
   source "monitrc.erb"
   variables node['monit']['monitrc']
-  notifies :restart, "service[monit]"
+  notifies :reload, "service[monit]"
 end
 
 script "add inittab" do
