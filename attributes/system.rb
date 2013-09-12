@@ -1,4 +1,4 @@
-default['monit']['check_system']['name'] = node['fqdn'] ||= "localperf"
+default['monit']['check_system']['name'] = node['fqdn'] || "localperf"
 default['monit']['check_system']['policies'] = [
   "if loadavg(1min) > 15 for 5 cycles then alert",
   "if loadavg(5min) > 10 for 5 cycles then alert",
