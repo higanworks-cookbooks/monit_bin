@@ -43,6 +43,7 @@ end
 
 template "/etc/monitrc" do
   source "monitrc.erb"
+  mode "0700"
   variables node['monit']['monitrc']
   notifies :restart, "service[monit]"
 end
