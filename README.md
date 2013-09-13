@@ -111,6 +111,13 @@ end</code></pre>
 * services: monitoring services. setting from attributes.
 * smartos_inittab: install and regist inittab for smartos. Smartos use this insted of default.
 
+# FAQ
+
+## monit status/summray doesn't work?
+
+When using monit without `m/monit`, You should set `127.0.0.1` or `0.0.0.0` to `node[:monit][:monitrc][:'http_address]` attribute.
+
+
 # Test
 
 `kitchen test`
