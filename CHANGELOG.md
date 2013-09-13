@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.3.10
+
+- [feature] support test-kitchen 1.0.0.beta.x
+- [Tune] change monitrc permission from '0700' to '0600'
+
+## v0.3.9
+
+- [Bugfix] fix monitrc permission from default to '0700'
+
 ## v0.3.8
 
 - [Bugfix] tell reload when monitrc update on smartos.
@@ -28,7 +37,7 @@
 
 - [Bugfix] binpath to use attribute.
 - [Bugfix] process type matching does not work due typo.
-- [Tune] Default monitorinig process for smartos. 
+- [Tune] Default monitorinig process for smartos.
 
 ## v0.3.1
 
