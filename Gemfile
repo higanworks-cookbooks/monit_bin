@@ -1,3 +1,3 @@
 source :rubygems
 
-gem 'test-kitchen'
+gem 'test-kitchen', '~> 1.0.0.beta.3'
