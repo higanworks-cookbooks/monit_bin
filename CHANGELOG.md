@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0
+
+- [feature] update monit version to 5.6
+- [feature] support test on smartos
+- [Tune] change monitrc permission from default to '0600' at smartos_inittab
+
 ## v0.3.10
 
 - [feature] support test-kitchen 1.0.0.beta.x
