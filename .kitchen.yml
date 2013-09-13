@@ -11,3 +11,7 @@ suites:
 - name: default
   run_list:
     - recipe[monit_bin::default]
+  attributes:
+    monit:
+      monitrc:
+        http_address: 127.0.0.1
