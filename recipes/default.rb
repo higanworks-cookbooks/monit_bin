@@ -24,9 +24,19 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-cookbook_file "/etc/init/monit.conf" do
-  source "monit_upstart"
-  notifies :restart, "service[monit]"
+if ["ubuntu", "smartos"].include? node[:platform] then
+  cookbook_file "/etc/init/monit.conf" do
+    source "monit_upstart"
+  end
+else
+  cookbook_file "/etc/init.d/monit" do
+    source "monit_sysvinit"
+    mode 0755
+  end
+
+  cookbook_file "/etc/default/monit" do
+    source "monit_default"
+  end
 end
 
 include_recipe "monit_bin::include"
