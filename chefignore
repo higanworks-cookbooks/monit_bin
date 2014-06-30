@@ -50,3 +50,5 @@ cookbooks/*
 
 # Vagrant
 .vagrant
+
+.kitchen.local.*

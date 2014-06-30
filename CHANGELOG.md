@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1
+
+- [feature] support debian initscript. 
+
 ## v1.0.0
 
 - [feature] update monit version to 5.6
