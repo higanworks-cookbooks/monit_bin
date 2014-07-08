@@ -1,7 +1,7 @@
 ## creted by chef for node['hostname']
 
 set daemon <%= @daemon %>
-    with start delay 30
+    with start delay <%= @start_delay %>
 <% if @init == true %>
 set init
 <% end %>
