@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.2
+
+- [feature] create attribute for start delay
+
 ## v1.1.1
 
 - [feature] support debian initscript. 
