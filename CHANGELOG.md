@@ -1,12 +1,13 @@
 # Changelog
 
-## v1.1.2
+## v1.1.3
 
+- [feature] update monit version to 5.8.1
 - [feature] create attribute for start delay
 
-## v1.1.1
+## v1.1.1 and 1.1.2
 
-- [feature] support debian initscript. 
+- [feature] support debian initscript.
 
 ## v1.0.0
 
