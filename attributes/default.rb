@@ -14,6 +14,7 @@ default['monit']['dir'] = '/etc/monit'
 default['monit']['bin_base'] = '/usr/local'
 
 default['monit']['monitrc']['daemon'] = 60
+default['monit']['monitrc']['start_delay'] = 30
 default['monit']['monitrc']['init']   = true
 default['monit']['monitrc']['logfile']   = "syslog facility log_daemon"
 default['monit']['monitrc']['eventqueue']   = "basedir /var/monit/ slots 1000"

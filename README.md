@@ -55,6 +55,8 @@ Put your confing to `/etc/monit/conf.avail/` and...
 
 # Attributes
 
+`node['monit']['monitrc']['start_delay']` wait some time (in seconds) at startup before start checking services default:30
+
 TODO: Write attributes...
 
 # Resources and Providers
