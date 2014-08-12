@@ -24,7 +24,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-if ["ubuntu", "smartos"].include? node[:platform] then
+if ["ubuntu", "smartos"].include? node["platform"] then
   cookbook_file "/etc/init/monit.conf" do
     source "monit_upstart"
   end
