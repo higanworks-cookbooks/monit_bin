@@ -20,17 +20,17 @@
 
 ### call from other recipe
 
-<pre><code>include_recipe "monit_binaries"
+<pre><code>include_recipe "monit_bin"
 
 ----
   put config from template to /etc/monit/conf.avail/
 ----
 
 # enable
-monit_binaries "myapp.conf"
+monit_bin "myapp.conf"
 
 # disable
-monit_binaries "myapp.conf" do
+monit_bin "myapp.conf" do
   enable false
 end
 </code></pre>
