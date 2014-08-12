@@ -44,7 +44,7 @@ Put your confing to `/etc/monit/conf.avail/` and...
 
 ** To enable setting**
 
-    monitensite postfix.conf  
+    monitensite postfix.conf
     monit reload
 
 ** To disable setting**
