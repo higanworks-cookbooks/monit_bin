@@ -1,7 +1,7 @@
 action :create do
 
   execute "reload_monit" do
-    command "#{default["monit"]["reload_command"]}"
+    command "#{node["monit"]["reload_command"]}"
     action :nothing
     only_if { node["monit"]["reload_on_change"] }
   end
