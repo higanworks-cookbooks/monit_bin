@@ -22,7 +22,7 @@ action :create do
        :stop_timeout => new_resource.stop_timeout,
        :policies => new_resource.policies
      })
-    notifies :run, 'execute[reload_monit]', :delayed
+    notifies :run, 'execute[reload_monit]'
     new_resource.updated_by_last_action(true)
   end
 end
