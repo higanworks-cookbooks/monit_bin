@@ -1,5 +1,4 @@
 action :create do
-
   template "#{node['monit']['dir']}/conf.avail/#{new_resource.name}" do
     source "check_process.erb"
     cookbook "monit_bin"
