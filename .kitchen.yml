@@ -16,6 +16,7 @@ suites:
 - name: default
   run_list:
     - recipe[monit_bin::default]
+    - recipe[monit_test::default]
   attributes:
     monit:
       monitrc:

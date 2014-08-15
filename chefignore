@@ -51,4 +51,9 @@ cookbooks/*
 # Vagrant
 .vagrant
 
+# Kitchen
 .kitchen.local.*
+test/*
+tmp/*
+.kitchen
+.librarian

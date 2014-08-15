@@ -1,0 +1,15 @@
+PATH
+  remote: .
+  specs:
+    monit_bin (1.2.0)
+
+PATH
+  remote: test/cookbooks/monit_test
+  specs:
+    monit_test (0.1.0)
+      monit_bin (>= 0.0.0)
+
+DEPENDENCIES
+  monit_bin (>= 0)
+  monit_test (>= 0)
+

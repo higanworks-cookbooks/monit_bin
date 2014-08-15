@@ -5,4 +5,5 @@ group :test do
   gem 'kitchen-vagrant'
   gem 'kitchen-zcloudjp'
   gem 'foodcritic'
+  gem 'librarian-chef'
 end

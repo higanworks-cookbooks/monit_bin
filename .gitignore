@@ -5,3 +5,4 @@ opscode.category
 .kitchen.local.yml
 .kitchen/
 tmp/
+.librarian/

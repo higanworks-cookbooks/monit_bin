@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.0
+
+- [feature]  issue #7 Support restart service action in LWRP
+- [test]     add config sshd
+
 ## v1.1.3
 
 - [feature] update monit version to 5.8.1

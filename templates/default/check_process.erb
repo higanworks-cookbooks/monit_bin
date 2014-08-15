@@ -16,6 +16,12 @@ check process <%= @service_name %>
   <% if @stop_timeout %>
   with timeout <%= @stop_timeout.to_s %> seconds
   <% end %>
+  <% if @restart_program %>
+  restart program = "<%= @restart_program %>"
+    <% if @restart_timeout %>
+  with timeout <%= @restart_timeout.to_s %> seconds
+    <% end %>
+  <% end %>
 <% @policies.each do |policy| %>
   <%= policy.to_s %>
 <% end %>
