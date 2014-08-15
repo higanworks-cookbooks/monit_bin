@@ -9,9 +9,6 @@ end
 
 default['monit']['binaries'] = "monit-#{node['monit']['version']}-#{node['os']}-#{node['monit']['arc']}"
 
-default["monit"]["reload_on_change"] = false
-default["monit"]["reload_command"] = "monit reload"
-
 default['monit']['dir'] = '/etc/monit'
 default['monit']['bin_base'] = '/usr/local'
 

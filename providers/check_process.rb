@@ -1,11 +1,5 @@
 action :create do
 
-  execute "reload_monit" do
-    command "#{node["monit"]["reload_command"]}"
-    action :nothing
-    only_if { node["monit"]["reload_on_change"] }
-  end
-
   template "#{node['monit']['dir']}/conf.avail/#{new_resource.name}" do
     source "check_process.erb"
     cookbook "monit_bin"
@@ -22,7 +16,6 @@ action :create do
        :stop_timeout => new_resource.stop_timeout,
        :policies => new_resource.policies
      })
-    notifies :run, 'execute[reload_monit]'
     new_resource.updated_by_last_action(true)
   end
 end
