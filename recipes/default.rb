@@ -67,7 +67,7 @@ script "install_from_source" do
   code <<-"EOH"
     mkdir -p #{Chef::Config[:file_cache_path]}/monit
     cd #{Chef::Config[:file_cache_path]}/monit
-    wget http://mmonit.com/monit/dist/binary/#{node['monit']['version']}/#{node['monit']['binaries']}.tar.gz
+    wget https://mmonit.com/monit/dist/binary/#{node['monit']['version']}/#{node['monit']['binaries']}.tar.gz
     tar xvzf #{node["monit"]['binaries']}.tar.gz
     cp -f monit-#{node['monit']['version']}/bin/monit /usr/sbin/
     cp -f monit-#{node['monit']['version']}/man/man1/monit.1 /usr/share/man/man1

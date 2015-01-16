@@ -1,4 +1,4 @@
-default['monit']['version'] = "5.8.1"
+default['monit']['version'] = "5.11"
 
 case node['kernel']['machine']
   when "x86_64" then
